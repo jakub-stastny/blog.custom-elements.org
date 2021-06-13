@@ -1,0 +1,30 @@
+language: Elm
+---
+
+|
+  Provides =org-mode= [[https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements][custom element]], which allows us to display Org mode formatted text as HTML.
+
+  Org mode format is used in the =body= field of the generated blog posts.
+
+  It uses [[https://github.com/jakub-stastny/blog.parser.post.org][blog.parser.post.org]] compiled to WebAssembly in order to have a consistent parser output (by using different Org mode parsers we might run into incompatibilities, which is undesirable).
+
+  Custom elements can be [[https://guide.elm-lang.org/interop/custom_elements.html][integrated into Elm]], which is how we make use of this in the [[https://github.com/jakub-stastny/blog.engine][blog.engine]].
+
+  *** Example
+
+  #+BEGIN_SRC html
+    <article>
+      <h1>Hello world!</h1>
+      <p class="excerpt">
+        Let's blog again!
+      </p>
+
+      <org-mode>
+        * So what is it going to be about?
+
+        - Programming.
+        - Life.
+      </org-mode>
+    </article>
+  #+END_SRC
+
